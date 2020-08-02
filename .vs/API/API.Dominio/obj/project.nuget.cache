@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "c+qZdaMA2R/d8qCpzuOaVkrxH4jDsat5cTaIF+FR79FtwWqlhwX42S8lmmQCeuJVKHfTOWGK0H7jURFLdWUWYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\paulo\\Documents\\Clonar_ASC_API\\ASC_API_EStudos\\.vs\\API\\API.Dominio\\API.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\paulo\\.nuget\\packages\\fluentvalidation\\9.0.1\\fluentvalidation.9.0.1.nupkg.sha512",
+    "C:\\Users\\paulo\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.0.1\\fluentvalidation.aspnetcore.9.0.1.nupkg.sha512",
+    "C:\\Users\\paulo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.0.1\\fluentvalidation.dependencyinjectionextensions.9.0.1.nupkg.sha512",
+    "C:\\Users\\paulo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

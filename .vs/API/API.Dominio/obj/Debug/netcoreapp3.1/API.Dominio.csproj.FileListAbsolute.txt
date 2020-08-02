@@ -1,0 +1,5 @@
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Dominio\bin\Debug\netcoreapp3.1\API.Dominio.deps.json
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Dominio\bin\Debug\netcoreapp3.1\API.Dominio.dll
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Dominio\obj\Debug\netcoreapp3.1\API.Dominio.csprojAssemblyReference.cache
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Dominio\obj\Debug\netcoreapp3.1\API.Dominio.AssemblyInfoInputs.cache
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Dominio\obj\Debug\netcoreapp3.1\API.Dominio.AssemblyInfo.cs

@@ -1,4 +1,5 @@
 ﻿using DevIO.Business.Intefaces;
+using DevIO.Business.Models;
 using DevIO.Data.Context;
 using DevIO.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace API.Fornecedores.Configuration
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+            services.AddScoped<IFornecedorService>();
 
             return services;
         }

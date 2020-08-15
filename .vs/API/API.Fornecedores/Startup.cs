@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace API.Fornecedores
 {
@@ -34,6 +35,22 @@ namespace API.Fornecedores
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.ResolveDependencies();
+            services.Configure<ApiBehaviorOptions>(options =>{
+
+                options.SuppressModelStateInvalidFilter = true;
+            
+            });
+
+            services.AddCors(options => {
+
+                options.AddPolicy("Development",
+                    b => b.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()); 
+            
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

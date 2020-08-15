@@ -7,6 +7,7 @@ using API.Fornecedores.DTO;
 using AutoMapper;
 using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
+using DevIO.Business.Notificacoes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,15 +19,18 @@ namespace API.Fornecedores.Controller
     {
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IFornecedorService _fornecedorService;
-        IMapper _mapper;
+        private readonly IMapper _mapper;
+        private readonly INotificador _notificador;
         public FornecedoresController(
             IFornecedorRepository fornecedorRepository,
             IMapper mapper,
-            IFornecedorService fornecedorService)
+            IFornecedorService fornecedorService,
+            INotificador notificador):base(notificador)
         {
             _fornecedorRepository = fornecedorRepository;
             _mapper = mapper;
             _fornecedorService = fornecedorService;
+            _notificador = notificador;
 
         }
         [HttpGet]
@@ -38,7 +42,7 @@ namespace API.Fornecedores.Controller
 
         }
 
-        [HttpGet("ObterPorId/{id:guid}")]
+        [HttpGet("ObterPorId/{id}")]
         public async Task<ActionResult<FornecedorDTO>>ObterPorId(Guid id)
         {
             if(id == null)
@@ -56,7 +60,7 @@ namespace API.Fornecedores.Controller
             
             return Fornecedor;
         }
-        [HttpGet("ObterFornecedorProdutosEndereco/{id:guid}")]
+        [HttpGet("ObterFornecedorProdutosEndereco/{id}")]
         public async Task<ActionResult<FornecedorDTO>>ObterFornecedorProdutosEndereco(Guid id)
         {
             if (id == null)
@@ -79,15 +83,14 @@ namespace API.Fornecedores.Controller
         public async Task<ActionResult<FornecedorDTO>> Post(FornecedorDTO fornecedor)
         {
             //O ModelState é conferido pela viewmodel
-            if(ModelState.IsValid)
-            {
-                return BadRequest();
-            }
+            if(!ModelState.IsValid)
+            
+                return CustomResponse(ModelState);
+            
 
             if(fornecedor == null)
-            {
-                return NotFound();
-            }
+              return NotFound();
+            
             var novoFornecedor = _mapper.Map<Fornecedor>(fornecedor);
             var resultado = await _fornecedorService.Adicionar(novoFornecedor);
 
@@ -98,12 +101,14 @@ namespace API.Fornecedores.Controller
             }
         }
 
-        [HttpPut("{guid:id}")]
+        [HttpPut("{id}")]
         public async Task<ActionResult<FornecedorDTO>>Put(Guid id, FornecedorDTO fornecedorDTO)
         {
-            if (fornecedorDTO.Id != id) return BadRequest();
-
-            if (!ModelState.IsValid) return BadRequest();
+            if (fornecedorDTO.Id != id)
+              return BadRequest("O id informado não foi encontrado");
+            
+            // Erro nas validações
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var Novofornecedor = _mapper.Map<Fornecedor>(fornecedorDTO);
 
@@ -118,7 +123,7 @@ namespace API.Fornecedores.Controller
 
         }
 
-        [HttpDelete("{guid:id}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<FornecedorDTO>>Delete(Guid id)
         {
             if (id == null) return NotFound("O id não foi informado");
@@ -127,11 +132,9 @@ namespace API.Fornecedores.Controller
 
             if (fornecedor == null) return BadRequest("Id não localizado");
 
-            var resultado = await _fornecedorService.Remover(id);
+            await _fornecedorService.Remover(id);
 
-            if (!resultado) return BadRequest("Não possivel deletar o usuário informado");
-
-            return Ok("O usuário " + fornecedor.Nome + " Foi deletado com sucesso");
+            return CustomResponse("O fornecedor "+fornecedor.Nome+"foi excluido com sucesso");
 
         }
 

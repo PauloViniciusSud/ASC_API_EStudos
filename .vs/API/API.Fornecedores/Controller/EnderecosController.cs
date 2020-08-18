@@ -7,6 +7,7 @@ using AutoMapper;
 using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
 using DevIO.Business.Notificacoes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,7 @@ namespace API.Fornecedores.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EnderecosController : MainController
     {
         private readonly IEnderecoRepository _enderecoRepository;
@@ -27,7 +29,7 @@ namespace API.Fornecedores.Controller
             _notificador = notificador;
             _mapper = mapper;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EnderecoDTO>>>ObterTodos()
         {
@@ -36,6 +38,7 @@ namespace API.Fornecedores.Controller
             return Ok(enderecos);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<EnderecoDTO>>SelecionarPorId(Guid Id)
         {
@@ -47,7 +50,7 @@ namespace API.Fornecedores.Controller
             return Ok(Endereco);
         }
 
-
+        [AllowAnonymous]
         [HttpPut]
         public async Task<ActionResult<EnderecoDTO>>Alterar(EnderecoDTO endereco)
         {

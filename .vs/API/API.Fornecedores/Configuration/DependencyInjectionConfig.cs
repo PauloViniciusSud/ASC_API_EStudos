@@ -25,6 +25,7 @@ namespace API.Fornecedores.Configuration
            services.AddScoped<INotificador, Notificador>();
             services.AddScoped<IFornecedorService, FornecedorService>();
           services.AddScoped<IProdutoService, ProdutoService>();
+            
            //services.AddScoped<IEnderecoService, EnderecoService>();
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //services.AddScoped<IUser, AspNetUser>();

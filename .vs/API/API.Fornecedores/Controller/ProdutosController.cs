@@ -162,7 +162,7 @@ namespace API.Fornecedores.Controller
                 return CustomResponse(ModelState);
             }
 
-            produtoViewModel.Imagem = imgPrefixo + produtoViewModel.ImagemUpload.FileName;
+           // produtoViewModel.Imagem = imgPrefixo + produtoViewModel.ImagemUpload.FileName;
             await _produtoService.Adicionar(_mapper.Map<Produto>(produtoViewModel));
 
             return CustomResponse(produtoViewModel);
@@ -207,4 +207,4 @@ namespace API.Fornecedores.Controller
 
 
 }
-}
+

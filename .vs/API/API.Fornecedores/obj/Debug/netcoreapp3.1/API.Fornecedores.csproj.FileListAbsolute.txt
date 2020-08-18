@@ -158,3 +158,10 @@ C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores
 C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\obj\Debug\netcoreapp3.1\API.Fornecedores.csproj.CoreCompileInputs.cache
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\obj\Debug\netcoreapp3.1\API.Fornecedores.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\paulo\Documents\Clonar_ASC_API\ASC_API_EStudos\.vs\API\API.Fornecedores\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
